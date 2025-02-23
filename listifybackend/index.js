@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 app.use(cookieParser());
 app.use(morgan("dev"));
-// app.use("/api", routes);
+app.use("/api", routes);
 app.use(routeNotFound);
 app.use(errorHandler);
 

@@ -1,6 +1,6 @@
 import express from "express";
 import { isAdminRoute, protectRoute } from "../middlewares/authMiddleware.js";
-import { getTeamList, loginUser, logoutUser, registerUser } from "../controllers/userController.js";
+import { activateUserProfile, changeUserPasssword, deleteuserProfile, getNotifications, getTeamList, loginUser, logoutUser, markNotificationRead, registerUser, updateUserProfile } from "../controllers/userController.js";
 
 const router = express.Router();
 
@@ -13,7 +13,7 @@ router.get("/notifications", protectRoute, getNotifications);
 
 router.put("/profile", protectRoute, updateUserProfile);
 router.put("/read-noti", protectRoute, markNotificationRead);
-router.put("/cahnge-password", protectRoute, changeUserPassword);
+router.put("/cahnge-password", protectRoute, changeUserPasssword);
 
 router
   .route("/:id")
