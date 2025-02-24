@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   MdDashboard,
-  MdOutlineAddTask,
   MdOutlinePendingActions,
   MdSettings,
   MdTaskAlt,
@@ -11,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import {setOpenSidebar} from '../redux/slices/authSlice'
 import clsx from 'clsx';
+import { BiListCheck } from "react-icons/bi";
 
 
 const linkData = [
@@ -83,10 +83,10 @@ const Sidebar = () => {
     <div className='w-full h-full flex flex-col gap-6 p-5'>
       <h1 className='flex gap-1 items-center '>
         <p className='bg-blue-500 p-2 rounded-full'>
-        <MdOutlineAddTask className='text-white text-2xl font-black'/>
+        <BiListCheck className='text-white text-2xl font-black'/>
         </p>
         <span className='text-2xl font-bold text-black'>
-          TaskMe
+          Listify
         </span>
       </h1>
       
