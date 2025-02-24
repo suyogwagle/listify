@@ -28,7 +28,7 @@ const Tasks = () => {
   const [loading, setLoading] = useState(false);
   const status = params?.status || "";
 
-  return loading? ( 
+  return loading ? ( 
   <div className="py-10">
     <Loading/>
   </div>

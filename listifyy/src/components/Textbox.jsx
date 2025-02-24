@@ -26,7 +26,7 @@ ref) => {
             </span>
           )}
     </div>
-  )
-})
+  );
+});
 
 export default Textbox;

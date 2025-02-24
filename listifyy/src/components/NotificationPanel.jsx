@@ -1,9 +1,10 @@
 import React, { Fragment, useState } from 'react';
 import { BiSolidMessageRounded } from "react-icons/bi";
 import { HiBellAlert } from "react-icons/hi2";
-import { Popover, Transition } from  "@headlessui/react";
+import { Transition } from  "@headlessui/react";
 import { IoIosNotificationsOutline } from 'react-icons/io';
 import { Link } from "react-router-dom";
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 
 const data = [
   {
@@ -66,7 +67,7 @@ const NotificationPanel = () => {
   return (
     <>
     <Popover className="relative">
-      <Popover.Button className="inline-flex items-center ouline-none">
+      <PopoverButton className="inline-flex items-center ouline-none">
         <div className="w-8 h-8 flex items-center justify-center text-gray-800 relative">
           <IoIosNotificationsOutline className="text-2xl"/>
           {data?.length > 0 && (
@@ -76,7 +77,7 @@ const NotificationPanel = () => {
           )}
         </div>
 
-      </Popover.Button>
+      </PopoverButton>
 
       
       <Transition
@@ -88,7 +89,7 @@ const NotificationPanel = () => {
           leaveFrom='opacity-100 translate-y-0'
           leaveTo='opacity-0 translate-y-1'
         >
-          <Popover.Panel className='absolute -right-16 md:-right-2 z-10 mt-5 flex w-screen max-w-max  px-4'>
+          <PopoverPanel className='absolute -right-16 md:-right-2 z-10 mt-5 flex w-screen max-w-max  px-4'>
             {({ close }) =>
               data?.length > 0 && (
                 <div className='w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5'>
@@ -136,7 +137,7 @@ const NotificationPanel = () => {
                 </div>
               )
             }
-          </Popover.Panel>
+          </PopoverPanel>
         </Transition>
     </Popover>
     </>

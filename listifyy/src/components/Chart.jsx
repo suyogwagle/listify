@@ -15,7 +15,7 @@ const Chart = () => {
       </BarChart>
 
     </ResponsiveContainer>
-  )
+  );
 };
 
 export default Chart;
